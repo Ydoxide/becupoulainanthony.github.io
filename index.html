@@ -94,17 +94,17 @@
     .card::before {
       content: "";
       position: absolute;
-      inset: -1px;
+      inset: -2px;
       border-radius: 18px;
       background: conic-gradient(
         from 0deg,
-        transparent 0deg,
-        rgba(255,255,255,0.6) 60deg,
-        transparent 120deg
+        rgba(255,255,255,0.9),
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.9)
       );
-      animation: rotateGlow 8s linear infinite;
+      animation: rotateGlow 14s linear infinite;
       z-index: 0;
-      opacity: 0.6;
+      opacity: 0.8;
     }
 
     .card::after {
@@ -121,9 +121,9 @@
       z-index: 2;
     }
 
-    .card:hover::before {
-      opacity: 1;
-      animation-duration: 2.5s;
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.8);
     }
 
     .card.visible {
