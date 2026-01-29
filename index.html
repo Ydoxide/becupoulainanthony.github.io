@@ -80,6 +80,7 @@
     }
 
     .card {
+      position: relative;
       background: var(--card);
       border-radius: 16px;
       padding: 26px;
@@ -87,6 +88,42 @@
       transform: translateY(30px);
       opacity: 0;
       transition: transform 0.6s ease, opacity 0.6s ease;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 18px;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(255,255,255,0.6) 60deg,
+        transparent 120deg
+      );
+      animation: rotateGlow 8s linear infinite;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      background: var(--card);
+      border-radius: 15px;
+      z-index: 1;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+      animation-duration: 2.5s;
     }
 
     .card.visible {
@@ -120,6 +157,13 @@
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
