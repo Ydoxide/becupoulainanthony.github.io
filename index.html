@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anthony BECU POULAIN – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #131722;
+      --text: #e6e8ee;
+      --muted: #9aa0b5;
+      --accent: #6cf2c2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #12172a, var(--bg));
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    header h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, var(--accent), #8ab4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 30px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #151a2b, var(--card));
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      transform: translateY(30px);
+      opacity: 0;
+      transition: all 0.6s ease;
+    }
+
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Anthony BECU--POULAIN</h1>
+  <p>
+    Conception, Développement, Infrastructure Réseaux et Maintenance des Systèmes Informatiques
+  </p>
+</header>
+
+<section>
+  <h2>Expériences</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Technicien Informatique Industrielle – EDF</h3>
+      <span>2023 – 2024 · Alternance</span>
+      <p>Maintenance, automatisation, réseaux industriels et suivi d'interventions critiques.</p>
+    </div>
+    <div class="card">
+      <h3>Opérateur Industriel – ArcelorMittal</h3>
+      <span>2024 – Aujourd'hui</span>
+      <p>Maintenance préventive, informatique logicielle et systèmes ANA/TOR.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Formations</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>BTS Systèmes Numériques</h3>
+      <span>2022 – 2024</span>
+      <p>Option Informatique & Réseaux – Lycée de l'Europe.</p>
+    </div>
+    <div class="card">
+      <h3>Baccalauréat Général – Mention Bien</h3>
+      <span>2019 – 2022</span>
+      <p>Spécialités Mathématiques & NSI.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Projets & Compétences</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Programmation</h3>
+      <p>Python, C#, JavaScript, automatisation et scripts industriels.</p>
+    </div>
+    <div class="card">
+      <h3>Réseaux & Systèmes</h3>
+      <p>Configuration réseau, dépannage, maintenance logicielle.</p>
+    </div>
+    <div class="card">
+      <h3>Création & Tech</h3>
+      <p>Projets informatiques, sites web, outils internes et prototypage.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 – Anthony Becu‑Poulain · GitHub Pages
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
