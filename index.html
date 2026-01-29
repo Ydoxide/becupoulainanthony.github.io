@@ -2,16 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Anthony BECU POULAIN – Portfolio</title>
+  <title>Anthony Becu-Poulain – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0d12;
-      --card: #131722;
-      --text: #e6e8ee;
-      --muted: #9aa0b5;
-      --accent: #6cf2c2;
+      --bg: #07090f;
+      --bg-soft: #0d111c;
+      --card: #121728;
+      --text: #e6e9f0;
+      --muted: #8b91a7;
+      --accent: #5cf2c7;
     }
 
     * { box-sizing: border-box; }
@@ -19,7 +20,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #12172a, var(--bg));
+      background: radial-gradient(circle at top, #0f1530, var(--bg));
       color: var(--text);
       overflow-x: hidden;
     }
@@ -31,43 +32,45 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 40px;
+      padding: 40px 20px;
       animation: fadeIn 1.2s ease;
     }
 
     header h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, var(--accent), #8ab4ff);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      margin: 0;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, var(--accent), #7aa2ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    header p {
+    header h2 {
+      margin-top: 10px;
+      font-weight: 400;
       color: var(--muted);
-      max-width: 700px;
-      line-height: 1.6;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+      max-width: 800px;
     }
 
     section {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
-      padding: 80px 30px;
+      padding: 90px 25px;
     }
 
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
+    section h3.section-title {
+      font-size: 2.2rem;
+      margin-bottom: 50px;
       position: relative;
     }
 
-    section h2::after {
+    section h3.section-title::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -10px;
-      width: 60px;
+      bottom: -14px;
+      width: 70px;
       height: 4px;
       background: var(--accent);
       border-radius: 2px;
@@ -75,18 +78,18 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
     }
 
     .card {
-      background: linear-gradient(180deg, #151a2b, var(--card));
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      transform: translateY(30px);
+      background: linear-gradient(180deg, var(--bg-soft), var(--card));
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+      transform: translateY(40px);
       opacity: 0;
-      transition: all 0.6s ease;
+      transition: transform 0.7s ease, opacity 0.7s ease;
     }
 
     .card.visible {
@@ -94,18 +97,24 @@
       opacity: 1;
     }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
+    .card h4 {
+      margin: 0 0 6px 0;
+      font-size: 1.25rem;
     }
 
     .card span {
-      color: var(--muted);
       font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .card p {
+      margin-top: 14px;
+      line-height: 1.6;
+      color: #cfd3e6;
     }
 
     footer {
+      background: #06070c;
       text-align: center;
       padding: 40px 20px;
       color: var(--muted);
@@ -113,7 +122,7 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(25px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
@@ -121,65 +130,79 @@
 <body>
 
 <header>
-  <h1>Anthony</h1>
-  <h1>BECU--POULAIN</h1>
-  <p>
-    Conception & Développement Logiciel · Infrastructure Réseaux & Systèmes
-  </p>
+  <h1>Anthony Becu-Poulain</h1>
+  <h2>Conception & développement logiciel · Infrastructure réseaux & systèmes informatiques</h2>
 </header>
 
 <section>
-  <h2>Expériences</h2>
+  <h3 class="section-title">Profil</h3>
+  <div class="card">
+    <p>
+      Technicien informatique industrielle, orienté développement logiciel et infrastructure réseau.
+      Intéressé par les systèmes automatisés, la maintenance informatique, les environnements industriels
+      et la conception de solutions fiables et performantes.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h3 class="section-title">Expériences professionnelles</h3>
   <div class="grid">
     <div class="card">
-      <h3>Technicien Informatique Industrielle – EDF</h3>
-      <span>2023 – 2024 · Alternance</span>
-      <p>Maintenance, automatisation, réseaux industriels et suivi d'interventions critiques.</p>
+      <h4>Technicien informatique industrielle – EDF (CNPE Gravelines)</h4>
+      <span>Juil. 2023 – Juil. 2024 · Alternance</span>
+      <p>
+        Maintenance des systèmes informatiques industriels, automatisation de tâches,
+        gestion des réseaux industriels et suivi d'interventions sur infrastructures critiques.
+      </p>
     </div>
     <div class="card">
-      <h3>Opérateur Industriel – ArcelorMittal</h3>
-      <span>2024 – Aujourd'hui</span>
-      <p>Maintenance préventive, informatique logicielle et systèmes ANA/TOR.</p>
+      <h4>Opérateur / Technicien industriel – ArcelorMittal</h4>
+      <span>Oct. 2024 – Aujourd'hui · Intérim</span>
+      <p>
+        Maintenance préventive et corrective, informatique logicielle industrielle,
+        manipulation de systèmes ANA/TOR et suivi opérationnel en environnement industriel lourd.
+      </p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Formations</h2>
+  <h3 class="section-title">Formations & diplômes</h3>
   <div class="grid">
     <div class="card">
-      <h3>BTS Systèmes Numériques</h3>
-      <span>2022 – 2024</span>
-      <p>Option Informatique & Réseaux – Lycée de l'Europe.</p>
+      <h4>BTS Systèmes Numériques – Informatique & Réseaux</h4>
+      <span>2022 – 2024 · Lycée de l'Europe, Dunkerque</span>
+      <p>Formation orientée réseaux, systèmes informatiques, automatisation et développement.</p>
     </div>
     <div class="card">
-      <h3>Baccalauréat Général – Mention Bien</h3>
+      <h4>Baccalauréat Général – Mention Bien</h4>
       <span>2019 – 2022</span>
-      <p>Spécialités Mathématiques & NSI.</p>
+      <p>Spécialités Mathématiques et Numérique & Sciences Informatiques (NSI).</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Projets & Compétences</h2>
+  <h3 class="section-title">Compétences</h3>
   <div class="grid">
     <div class="card">
-      <h3>Programmation</h3>
-      <p>Python, C#, JavaScript, automatisation et scripts industriels.</p>
+      <h4>Développement logiciel</h4>
+      <p>Python, C#, JavaScript · Scripts, outils internes, automatisation.</p>
     </div>
     <div class="card">
-      <h3>Réseaux & Systèmes</h3>
-      <p>Configuration réseau, dépannage, maintenance logicielle.</p>
+      <h4>Réseaux & systèmes</h4>
+      <p>Configuration réseau, dépannage, maintenance logicielle et matérielle.</p>
     </div>
     <div class="card">
-      <h3>Création & Tech</h3>
-      <p>Projets informatiques, sites web, outils internes et prototypage.</p>
+      <h4>Informatique industrielle</h4>
+      <p>Systèmes automatisés, maintenance industrielle, environnements critiques.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2025 – Anthony Becu‑Poulain · GitHub Pages
+  © 2025 – Anthony Becu-Poulain · GitHub Pages
 </footer>
 
 <script>
