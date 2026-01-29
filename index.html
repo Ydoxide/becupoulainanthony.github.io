@@ -2,17 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Anthony Becu-Poulain – Portfolio</title>
+  <title>Anthony Becu‑Poulain – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #07090f;
-      --bg-soft: #0d111c;
-      --card: #121728;
-      --text: #e6e9f0;
-      --muted: #8b91a7;
-      --accent: #5cf2c7;
+      --bg: #000000;
+      --card: #0d0d0d;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+      --accent: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -20,7 +19,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #0f1530, var(--bg));
+      background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
     }
@@ -33,35 +32,34 @@
       align-items: center;
       text-align: center;
       padding: 40px 20px;
-      animation: fadeIn 1.2s ease;
+      animation: fadeIn 1s ease;
     }
 
     header h1 {
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-size: clamp(2.2rem, 6vw, 4rem);
       margin: 0;
       letter-spacing: 1px;
-      background: linear-gradient(90deg, var(--accent), #7aa2ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
     }
 
     header h2 {
-      margin-top: 10px;
+      margin-top: 16px;
       font-weight: 400;
       color: var(--muted);
-      font-size: 1.15rem;
-      max-width: 800px;
+      font-size: 1.1rem;
+      max-width: 900px;
+      line-height: 1.6;
     }
 
     section {
       max-width: 1150px;
       margin: 0 auto;
-      padding: 90px 25px;
+      padding: 80px 25px;
     }
 
     section h3.section-title {
-      font-size: 2.2rem;
-      margin-bottom: 50px;
+      font-size: 2rem;
+      margin-bottom: 40px;
       position: relative;
     }
 
@@ -69,27 +67,26 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -14px;
-      width: 70px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
+      bottom: -12px;
+      width: 60px;
+      height: 2px;
+      background: var(--text);
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 35px;
+      gap: 30px;
     }
 
     .card {
-      background: linear-gradient(180deg, var(--bg-soft), var(--card));
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
-      transform: translateY(40px);
+      background: var(--card);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+      transform: translateY(30px);
       opacity: 0;
-      transition: transform 0.7s ease, opacity 0.7s ease;
+      transition: transform 0.6s ease, opacity 0.6s ease;
     }
 
     .card.visible {
@@ -98,8 +95,8 @@
     }
 
     .card h4 {
-      margin: 0 0 6px 0;
-      font-size: 1.25rem;
+      margin: 0 0 8px 0;
+      font-size: 1.2rem;
     }
 
     .card span {
@@ -110,19 +107,19 @@
     .card p {
       margin-top: 14px;
       line-height: 1.6;
-      color: #cfd3e6;
+      color: var(--text);
     }
 
     footer {
-      background: #06070c;
+      background: #000000;
       text-align: center;
-      padding: 40px 20px;
+      padding: 35px 20px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
@@ -130,7 +127,7 @@
 <body>
 
 <header>
-  <h1>Anthony Becu-Poulain</h1>
+  <h1>Anthony BECU--POULAIN</h1>
   <h2>Conception & développement logiciel · Infrastructure réseaux & systèmes informatiques</h2>
 </header>
 
@@ -202,7 +199,7 @@
 </section>
 
 <footer>
-  © 2025 – Anthony Becu-Poulain · GitHub Pages
+  © 2025 – Anthony Becu‑Poulain · GitHub Pages
 </footer>
 
 <script>
