@@ -4,199 +4,27 @@
   <meta charset="UTF-8" />
   <title>Anthony BECU--POULAIN – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #000000;
-      --card: #0e0e0e;
-      --text: #ffffff;
-      --muted: #b5b5b5;
-      --accent: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px;
-    }
-
-    header h1 {
-      font-size: clamp(2.5rem, 6vw, 4.2rem);
-      margin: 0;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    header p {
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
-
-    section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 30px;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 80px;
-      letter-spacing: 0.15em;
-    }
-
-    /* ===== PARCOURS ===== */
-    .parcours-header {
-      display: grid;
-      grid-template-columns: 1fr 60px 1fr;
-      margin-bottom: 40px;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      font-size: 0.9rem;
-    }
-
-    .parcours-header span:first-child { text-align: right; padding-right: 40px; }
-    .parcours-header span:last-child { text-align: left; padding-left: 40px; }
-
-    .timeline {
-      display: grid;
-      grid-template-columns: 1fr 60px 1fr;
-      position: relative;
-    }
-
-    .line {
-      grid-column: 2;
-      width: 6px;
-      background: #ffffff;
-      border-radius: 4px;
-      margin: 0 auto;
-    }
-
-    .col {
-      display: flex;
-      flex-direction: column;
-      gap: 80px;
-    }
-
-    .experiences { align-items: flex-end; padding-right: 40px; }
-    .formations { align-items: flex-start; padding-left: 40px; }
-
-    .item {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      position: relative;
-    }
-
-    .experiences .item { flex-direction: row-reverse; }
-
-    .date {
-      font-size: 0.9rem;
-      color: var(--muted);
-      min-width: 60px;
-      text-align: center;
-    }
-
-    .item::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: 14px;
-      height: 14px;
-      background: #ffffff;
-      border-radius: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-    }
-
-    .experiences .item::before { right: -47px; }
-    .formations .item::before { left: -47px; }
-
-    .card {
-      background: var(--card);
-      padding: 20px 24px;
-      border-radius: 14px;
-      max-width: 420px;
-      border: 1px solid rgba(255,255,255,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(255,255,255,0.15);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .parcours-header {
-        grid-template-columns: 1fr;
-        text-align: left;
-        gap: 60px;
-      }
-
-      .parcours-header span:first-child,
-      .parcours-header span:last-child {
-        padding: 0;
-      }
-
-      .timeline {
-        grid-template-columns: 1fr;
-      }
-
-      .line { display: none; }
-
-      .col {
-        align-items: flex-start;
-        padding-left: 40px;
-        border-left: 4px solid #ffffff;
-        margin-bottom: 80px;
-      }
-
-      .item::before {
-        left: -11px;
-      }
-
-      .experiences .item,
-      .formations .item {
-        flex-direction: row;
-      }
-
-      .experiences { padding-right: 0; }
-      .formations { padding-left: 0; }
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-  </style>
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
 <header>
   <h1>Anthony</h1>
   <h1>BECU--POULAIN</h1>
   <p>Conception & Développement Logiciel · Infrastructure Réseaux & Systèmes</p>
 </header>
 
+<!-- =========================
+     PARCOURS
+========================= -->
 <section>
   <h2>Parcours</h2>
 
@@ -207,34 +35,61 @@
   </div>
 
   <div class="timeline">
+
+    <!-- EXPERIENCES -->
     <div class="col experiences">
+
       <div class="item">
         <span class="date">2024</span>
-        <div class="card">Opérateur Industriel – ArcelorMittal</div>
+        <div class="card">
+          <strong>Opérateur Industriel</strong><br>
+          ArcelorMittal
+        </div>
       </div>
+
       <div class="item">
         <span class="date">2023</span>
-        <div class="card">Technicien Informatique Industrielle – EDF</div>
+        <div class="card">
+          <strong>Technicien Informatique Industrielle</strong><br>
+          EDF – Alternance
+        </div>
       </div>
+
     </div>
 
-    <div class="line"></div>
+    <!-- BARRE CENTRALE -->
+    <div></div>
 
+    <!-- FORMATIONS -->
     <div class="col formations">
+
       <div class="item">
         <span class="date">2024</span>
-        <div class="card">BTS Systèmes Numériques</div>
+        <div class="card">
+          <strong>BTS Systèmes Numériques</strong><br>
+          Option Informatique & Réseaux
+        </div>
       </div>
+
       <div class="item">
         <span class="date">2022</span>
-        <div class="card">Baccalauréat Général – Mention Bien</div>
+        <div class="card">
+          <strong>Baccalauréat Général</strong><br>
+          Spécialités Mathématiques & NSI<br>
+          Mention Bien
+        </div>
       </div>
+
     </div>
+
   </div>
 </section>
 
+<!-- =========================
+     FOOTER
+========================= -->
 <footer>
-  © 2025 – Anthony BECU-POULAIN · GitHub Pages
+  © 2025 – Anthony BECU--POULAIN · GitHub Pages
 </footer>
 
 </body>
