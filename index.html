@@ -52,14 +52,14 @@
     }
 
     section {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 25px;
+      padding: 90px 25px;
     }
 
     section h3.section-title {
       font-size: 2rem;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       position: relative;
     }
 
@@ -73,78 +73,72 @@
       background: var(--text);
     }
 
-    .grid {
+    /* TIMELINE */
+
+    .timeline-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
     }
 
-    .card {
+    .timeline-title {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .timeline {
       position: relative;
-      background: var(--card);
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-      transform: translateY(30px);
-      opacity: 0;
-      transition: transform 0.6s ease, opacity 0.6s ease;
-      overflow: hidden;
+      padding-left: 30px;
     }
 
-    .card::before {
+    .timeline::before {
       content: "";
       position: absolute;
-      inset: -2px;
-      border-radius: 18px;
-      background: conic-gradient(
-        from 0deg,
-        rgba(255,255,255,0.9),
-        rgba(255,255,255,0.2),
-        rgba(255,255,255,0.9)
-      );
-      animation: rotateGlow 14s linear infinite;
-      z-index: 0;
-      opacity: 0.8;
+      left: 4px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,0.25);
     }
 
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      background: var(--card);
-      border-radius: 15px;
-      z-index: 1;
-    }
-
-    .card > * {
+    .timeline-item {
       position: relative;
-      z-index: 2;
+      margin-bottom: 40px;
     }
 
-    .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-    }
-
-    .card.visible {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    .card h4 {
-      margin: 0 0 8px 0;
-      font-size: 1.2rem;
-    }
-
-    .card span {
-      font-size: 0.9rem;
+    .timeline-date {
+      display: block;
+      font-size: 0.85rem;
       color: var(--muted);
+      margin-bottom: 8px;
     }
 
-    .card p {
-      margin-top: 14px;
-      line-height: 1.6;
-      color: var(--text);
+    .timeline-dot {
+      position: absolute;
+      left: -1px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--text);
+    }
+
+    .timeline-content h5 {
+      margin: 0 0 6px 0;
+      font-size: 1.05rem;
+    }
+
+    .timeline-content p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .timeline-wrapper {
+        grid-template-columns: 1fr;
+      }
     }
 
     footer {
@@ -159,13 +153,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes rotateGlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
@@ -176,35 +163,57 @@
 </header>
 
 <section>
-  <h3 class="section-title">Profil</h3>
-  <div class="card">
-    <p>
-      Technicien informatique industrielle, orienté développement logiciel et infrastructure réseau.
-      Intéressé par les systèmes automatisés, la maintenance informatique, les environnements industriels
-      et la conception de solutions fiables et performantes.
-    </p>
-  </div>
-</section>
+  <h3 class="section-title">Parcours</h3>
+  <div class="timeline-wrapper">
 
-<section>
-  <h3 class="section-title">Expériences professionnelles</h3>
-  <div class="grid">
-    <div class="card">
-      <h4>Technicien informatique industrielle – EDF (CNPE Gravelines)</h4>
-      <span>Juil. 2023 – Juil. 2024 · Alternance</span>
-      <p>
-        Maintenance des systèmes informatiques industriels, automatisation de tâches,
-        gestion des réseaux industriels et suivi d'interventions sur infrastructures critiques.
-      </p>
+    <div class="timeline-column">
+      <h4 class="timeline-title">Expériences</h4>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-date">2024 – Aujourd'hui</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5>Opérateur / Technicien industriel – ArcelorMittal</h5>
+            <p>Maintenance préventive et corrective, informatique logicielle industrielle, systèmes ANA/TOR.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2023 – 2024</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5>Technicien informatique industrielle – EDF</h5>
+            <p>Automatisation, réseaux industriels, maintenance et suivi d'infrastructures critiques.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <h4>Opérateur / Technicien industriel – ArcelorMittal</h4>
-      <span>Oct. 2024 – Aujourd'hui · Intérim</span>
-      <p>
-        Maintenance préventive et corrective, informatique logicielle industrielle,
-        manipulation de systèmes ANA/TOR et suivi opérationnel en environnement industriel lourd.
-      </p>
+
+    <div class="timeline-column">
+      <h4 class="timeline-title">Formations</h4>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-date">2022 – 2024</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5>BTS Systèmes Numériques – Informatique & Réseaux</h5>
+            <p>Lycée de l'Europe, Dunkerque.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2019 – 2022</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5>Baccalauréat Général – Mention Bien</h5>
+            <p>Spécialités Mathématiques & NSI.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 
