@@ -72,10 +72,6 @@ header p {
   padding-left: 40px;
 }
 
-/* ========================= */
-/* TIMELINE */
-/* ========================= */
-
 .timeline {
   position: relative;
   display: flex;
@@ -95,10 +91,6 @@ header p {
   transform: translateX(-50%);
 }
 
-/* ========================= */
-/* ITEMS */
-/* ========================= */
-
 .item {
   position: relative;
   display: flex;
@@ -106,17 +98,14 @@ header p {
   gap: 24px;
 }
 
-/* FORMATIONS = gauche */
 .formations .item {
   justify-content: flex-start;
 }
 
-/* EXPÉRIENCES = droite */
 .experiences .item {
   justify-content: flex-end;
 }
 
-/* POINTS SUR LA LIGNE */
 .item::before {
   content: "";
   position: absolute;
@@ -129,7 +118,6 @@ header p {
   z-index: 2;
 }
 
-/* Point côté centre */
 .formations .item::before {
   right: calc(50% - 7px);
 }
@@ -138,17 +126,12 @@ header p {
   left: calc(50% - 7px);
 }
 
-/* DATE */
 .date {
   font-size: 0.85rem;
   color: var(--muted);
   min-width: 60px;
   text-align: center;
 }
-
-/* ========================= */
-/* CARD */
-/* ========================= */
 
 .card {
   background: var(--card);
@@ -163,10 +146,6 @@ header p {
   transform: translateY(-10px);
   box-shadow: 0 25px 50px rgba(255,255,255,0.15);
 }
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
 
 @media (max-width: 900px) {
   h2 {
