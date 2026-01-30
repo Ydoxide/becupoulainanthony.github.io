@@ -75,6 +75,25 @@
 
     /* TIMELINE CENTRALE */
 
+    .timeline-headings {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .timeline-headings span:first-child {
+      text-align: right;
+      padding-right: 40px;
+    }
+
+    .timeline-headings span:last-child {
+      text-align: left;
+      padding-left: 40px;
+    }
+
     .timeline-center {
       position: relative;
       max-width: 900px;
@@ -88,7 +107,7 @@
       bottom: 0;
       left: 50%;
       width: 6px;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.35);
       transform: translateX(-50%);
       border-radius: 3px;
     }
@@ -112,17 +131,13 @@
     .timeline-dot {
       position: absolute;
       top: 30px;
-      right: -13px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 14px;
       height: 14px;
       background: #fff;
       border-radius: 50%;
       z-index: 2;
-    }
-
-    .timeline-item.right .timeline-dot {
-      left: -13px;
-      right: auto;
     }
 
     .timeline-content {
@@ -148,6 +163,50 @@
       margin: 0;
       color: var(--muted);
       line-height: 1.5;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .timeline-headings {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 10px;
+      }
+
+      .timeline-headings span {
+        padding: 0;
+        font-weight: 600;
+      }
+
+      .timeline-headings span:first-child::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: var(--text);
+        margin-top: 6px;
+      }
+
+      .timeline-line {
+        left: 10px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 20px;
+        text-align: left;
+      }
+
+      .timeline-item.left,
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-dot {
+        left: 10px;
+        transform: none;
+      }
     }
 
     @media (max-width: 900px) {
@@ -202,6 +261,11 @@
 
 <section>
   <h3 class="section-title">Parcours</h3>
+
+  <div class="timeline-headings">
+    <span>Expériences</span>
+    <span>Formations</span>
+  </div>
 
   <div class="timeline-center">
 
