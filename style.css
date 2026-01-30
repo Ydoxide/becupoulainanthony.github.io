@@ -52,10 +52,9 @@ header p {
   font-size: 1.1rem;
 }
 
-/* TITRES COLONNES */
 .parcours-header {
   display: grid;
-  grid-template-columns: 1fr 80px 1fr;
+  grid-template-columns: 1fr 60px 1fr;
   margin-bottom: 40px;
   text-transform: uppercase;
   font-size: 0.9rem;
@@ -73,16 +72,14 @@ header p {
   padding-left: 40px;
 }
 
-/* ========== TIMELINE DESKTOP ========== */
-
-.timeline-desktop {
-  position: relative;
+.timeline {
   display: grid;
-  grid-template-columns: 1fr 80px 1fr;
-  row-gap: 40px;
+  grid-template-columns: 1fr 60px 1fr;
+  position: relative;
+  row-gap: 60px;
 }
 
-.timeline-desktop::before {
+.timeline::before {
   content: "";
   grid-column: 2;
   grid-row: 1 / -1;
@@ -96,27 +93,27 @@ header p {
   display: contents;
 }
 
-.col-left,
-.col-center,
-.col-right {
+.left,
+.center,
+.right {
   display: flex;
   align-items: center;
 }
 
-.col-left {
+.left {
   justify-content: flex-end;
   padding-right: 40px;
 }
 
-.col-right {
+.right {
   justify-content: flex-start;
   padding-left: 40px;
 }
 
-.col-center {
+.center {
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .date {
@@ -131,60 +128,10 @@ header p {
   border-radius: 50%;
 }
 
-/* ========== TIMELINE MOBILE ========== */
-
-.timeline-mobile {
-  display: none;
-  margin-top: 40px;
-}
-
-.mobile-title {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.9rem;
-  margin: 40px 0 20px;
-}
-
-.mobile-line {
-  position: relative;
-  margin-left: 20px;
-  padding-left: 20px;
-}
-
-.mobile-line::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: #ffffff;
-  border-radius: 4px;
-}
-
-.mobile-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 30px;
-}
-
-.mobile-item .dot {
-  margin-top: 6px;
-}
-
-.mobile-item .content {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* ========== CARD ========== */
-
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  padding: 18px 22px;
+  padding: 20px 24px;
   border-radius: 14px;
   max-width: 420px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -196,35 +143,61 @@ header p {
   box-shadow: 0 18px 35px rgba(255,255,255,0.12);
 }
 
-/* ========== FOOTER ========== */
+@media (max-width: 900px) {
+  .parcours-header {
+    display: none;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .row::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #ffffff;
+    border-radius: 4px;
+  }
+
+  .dot {
+    position: absolute;
+    left: -7px;
+    top: 0;
+  }
+
+  .left,
+  .right,
+  .center {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .center {
+    flex-direction: row;
+    gap: 12px;
+  }
+}
 
 footer {
   text-align: center;
   padding: 40px 20px;
   font-size: 0.85rem;
   color: var(--muted);
-}
-
-/* ========== RESPONSIVE ========== */
-
-@media (max-width: 900px) {
-  h2 {
-    margin-bottom: 40px;
-  }
-
-  .parcours-header {
-    display: none;
-  }
-
-  .timeline-desktop {
-    display: none;
-  }
-
-  .timeline-mobile {
-    display: block;
-  }
-
-  section {
-    padding: 60px 20px;
-  }
 }
